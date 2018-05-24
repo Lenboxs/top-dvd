@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\TopTenPage;
+use App\Movie;
 
 class TopTenController extends Controller
 {
@@ -51,10 +53,10 @@ class TopTenController extends Controller
     public function update(Request $request)
     {
         $topten = TopTenPage::orderBy( 'id', 'desc' )->first();
-		
-		$topten->heading = !empty($request->input('heading')) ? $request->input('heading') : '';
-		
-		$topten->save();
+
+		    $topten->heading = !empty( $request->input( 'heading' ) ) ? $request->input( 'heading' ) : '';
+
+		    $topten->save();
 
         return redirect( 'admin/top-ten' );
     }
@@ -62,5 +64,16 @@ class TopTenController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function move( $id )
+    {
+        $movie = Movie::find( $id );
+
+        $topten = TopTenPage::orderBy( 'id', 'desc' )->first();
+
+        $topten->movies()->syncWithoutDetaching( [ $movie->id => ['sort' => 0] ] );
+
+        return redirect( 'admin/movies' );
     }
 }

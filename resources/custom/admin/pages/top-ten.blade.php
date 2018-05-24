@@ -24,7 +24,7 @@
       <form role="form" method="POST" action="{{ url( '/admin/update-topten' ) }}">
         <div class="box-body">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
-			
+
 			<div class="form-group{{ $errors->has('heading') ? ' has-error' : '' }}">
 				<label for="heading" class="control-label">Heading</label>
 
@@ -70,8 +70,8 @@
 							<td class="sortable-handle" style="width: 24px;"><span class="glyphicon glyphicon-sort"></span></td>
 							<td style="width: 699px;">{{ $movie->name }}</td>
 							<td class="grid-actions" style="width: 329px;">
-								<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-								<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+								<!--a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+								<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span></a-->
 							</td>
 						</tr>
 					@endforeach
@@ -82,63 +82,18 @@
 				<!-- /.box-body -->
 			</form>
 		@endif
-        
+
 
         <div class="box-footer">
           <button type="submit" class="btn btn-primary">Publish</button>
         </div>
-      
-    </div>
-	
-	    <div class="box box-primary">
-      <div class="box-header with-border">
-        <h3 class="box-title"> <i class="fa fa-cog"></i> Sort Top Ten Series</h3>
-      </div>
-      <!-- /.box-header -->
-      <!-- form start -->
-	  @if( !empty( $topten ) )
-		  <form role="form">
-			<div class="box-body">
 
-				<table class="table table-striped table-hover">
-			<thead>
-			<tr>
-				<th></th>
-				<th>Title</th>
-				<th></th>
-			</tr>
-			</thead>
-			<tbody class="sortable ui-sortable" data-entityname="articles">
-				@if( !empty( $topten->movies ) )
-					@foreach( $topten->movies as $movie )
-						<tr data-itemid="{{ $movie->id }}">
-							<td class="sortable-handle" style="width: 24px;"><span class="glyphicon glyphicon-sort"></span></td>
-							<td style="width: 699px;">{{ $movie->name }}</td>
-							<td class="grid-actions" style="width: 329px;">
-								<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-								<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
-							</td>
-						</tr>
-					@endforeach
-				@endif
-					</tbody>
-				</table>
-				</div>
-				<!-- /.box-body -->
-			</form>
-		@endif
-        
-
-        <div class="box-footer">
-          <button type="submit" class="btn btn-primary">Publish</button>
-        </div>
-      
     </div>
   </div>
 </div>
 <section>
 @endsection
- 
+
 
 @push( 'custom-scripts' )
 <script>

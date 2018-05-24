@@ -23,6 +23,8 @@ Route::get( '/admin/home-page', 'Admin\HomeController@homePage' )->name( 'home-p
 
 Route::get( '/admin/top-ten', 'Admin\TopTenController@edit' )->name( 'top-ten' );
 
+Route::get( '/admin/movie-to-top-ten/{id}', 'Admin\TopTenController@move' )->name( 'movie-to-top-ten' );
+
 Route::post( '/admin/update-topten', 'Admin\TopTenController@update' )->name( 'update-topten' );
 
 //adminmovies
