@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\TopTenPage;
 use App\Movie;
 
+use App\Http\Requests\Admin\TopTenFormRequest;
+
 class TopTenController extends Controller
 {
     /**
@@ -30,7 +32,7 @@ class TopTenController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(TopTenFormRequest $request)
     {
         //
     }
@@ -50,7 +52,7 @@ class TopTenController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(TopTenFormRequest $request)
     {
         $topten = TopTenPage::orderBy( 'id', 'desc' )->first();
 
