@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Helpers\UploadService;
+use App\Http\Requests\Admin\MovieFormRequest;
 
 use App\Movie;
 
@@ -19,7 +20,7 @@ class MovieController extends Controller
     {
          $this->middleware( 'auth' );
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +51,7 @@ class MovieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, UploadService $uploadService )
+    public function store(MovieFormRequest $request, UploadService $uploadService )
     {
         $movie = new Movie();
 
@@ -101,7 +102,7 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UploadService $uploadService )
+    public function update(MovieFormRequest $request, UploadService $uploadService )
     {
       $movie = Movie::find($request->input('id'));
 

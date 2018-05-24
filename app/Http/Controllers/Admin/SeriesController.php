@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Helpers\UploadService;
+use App\Http\Requests\Admin\SeriesFormRequest;
 
 use App\Series;
 
@@ -50,7 +51,7 @@ class SeriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request, UploadService $uploadService )
+    public function store( SeriesFormRequest $request, UploadService $uploadService )
     {
       $series = new Series();
 
@@ -101,7 +102,7 @@ class SeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UploadService $uploadService )
+    public function update(SeriesFormRequest $request, UploadService $uploadService )
     {
       $series = Series::find($request->input('id'));
 

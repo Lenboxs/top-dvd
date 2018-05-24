@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Branch;
+use App\Http\Requests\Admin\BranchFormRequest;
 
 class BranchController extends Controller
 {
@@ -50,7 +51,7 @@ class BranchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BranchFormRequest $request)
     {
       $branch = new Branch();
 
@@ -97,7 +98,7 @@ class BranchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(BranchFormRequest $request)
     {
       $branch = Branch::find($request->input('id'));
 
