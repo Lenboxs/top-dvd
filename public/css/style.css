@@ -1,0 +1,160 @@
+.body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.header{
+  background: #333;
+  padding: 14px;
+  color: #eee;
+  text-align: center;
+  height: 100px;
+}
+
+.header .navbar-default {
+  background-color: #333;
+  border-color: #d3e0e9;
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+.header .navbar-default .navbar-nav li  a{
+  color: #198c2d;
+}
+
+.header .navbar-default .navbar-brand {
+  color: #FFEB3B;
+}
+
+.navbar-brand {
+    padding: 0px !important;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.search-btn {
+  background: #198c2d;
+  border: 1px solid #198c2d;
+}
+
+.search-btn:hover {
+  background: #0e541a !important;
+  border: 1px solid #0e541a !important;
+}
+
+.register {
+  background: #198c2d;
+  color: #ffffff !important;
+  border-radius: 5px;
+  transition: .2s all;
+}
+
+.register:hover {
+  background: #0e541a !important;
+}
+
+.navigation .navbar-default {
+  background-color: #222;
+  border-color: #d3e0e9;
+  border: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-text {
+    color: #ff0;
+}
+
+.content{
+  position: relative;
+}
+
+.content-background {
+  background: url(../img/background-two.jpg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.stripes-background {
+  background: repeating-linear-gradient(-45deg, #fff100, #fff100 45px, #198c2d 45px, #198c2d 90px);
+}
+
+.content-overlay {
+  background: rgba(0,0,0,0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 100;
+  padding: 5%;
+}
+
+.dvd {
+
+}
+
+.dvd a{
+  text-decoration: none;
+}
+.dvd a:hover{
+  color: #ff0;
+  text-decoration: none;
+}
+
+.dvd-name{
+  color: #fff;
+  text-align: center;
+}
+
+.dvd-img{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-height: 530px;
+}
+
+h1{
+  text-align: center;
+}
+
+.heading{
+  color:#FFEB3B;
+  font-size: 60px;
+  font-family: 'Erica One', cursive;
+}
+
+.footer{
+  background: #333;
+  padding: 20px 0px;
+  color: #eee;
+  text-align: center;
+}
+
+.footer a{
+  color: #01b50f;
+}
+
+.stripes-wrapper {
+  margin: 0;
+}
+
+.background-block{
+  padding: 1% 10% 5%;
+  background: #198c2d;
+}
